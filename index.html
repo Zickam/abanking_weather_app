@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=b9fb7059-a8f1-44c4-ba80-11ae76475b21&lang=ru_RU"></script>
+
+
+</head>
+    
+   
+</head>
+<body>
+
+    <input placeholder="latitude" id="inputLatitude"></input>
+    <input placeholder="longitude" id="inputLongitude"></input>
+    <div class="currentTemperature">
+        <p id="celsius"></p>
+        <p id="town"></p>
+    </div>
+    <button onclick="update()">Get weather info</button>
+
+    <button onclick="updateCoordsFromMap()">Use coordinates from map</button>
+    
+    <div id="map" style="width: 600px; height: 400px"></div>
+</body>
+<script src="script.js"></script>
+</html>
