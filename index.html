@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <script src="https://api-maps.yandex.ru/v3/?apikey=b9fb7059-a8f1-44c4-ba80-11ae76475b21&lang=ru_RU"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 
 </head>
@@ -13,18 +14,31 @@
    
 </head>
 <body>
+    <div class="mainMenu">
+        <div class="innerElem">
+            <div class="searchBox">
+                <input placeholder="latitude" id="inputLatitude"></input>
+            </div>
+            <div class="searchBox">
+                <input placeholder="longitude" id="inputLongitude"></input>
+            </div>
+            <div class="currentConditions">
+                <p id="celsius"></p>
+                <p id="town"></p>
+                <img id="icon" src="">
+                <p id="localtime"></p>
+                <p id="windForce"></p>
+                <p id="windDirection"></p>
+            </div>
+        </div>
+        <div>
+            <button onclick="update()">Get weather info</button>
 
-    <input placeholder="latitude" id="inputLatitude"></input>
-    <input placeholder="longitude" id="inputLongitude"></input>
-    <div class="currentTemperature">
-        <p id="celsius"></p>
-        <p id="town"></p>
+            <button onclick="updateCoordsFromMap()">Use coordinates from map</button>
+            
+            <div id="map"></div>
+        </div>
     </div>
-    <button onclick="update()">Get weather info</button>
-
-    <button onclick="updateCoordsFromMap()">Use coordinates from map</button>
-    
-    <div id="map" style="width: 600px; height: 400px"></div>
 </body>
 <script src="script.js"></script>
 </html>
