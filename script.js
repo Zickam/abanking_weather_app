@@ -70,6 +70,8 @@ function updateCurrentConditionsDisplay(widget, json_response) {
     windforce_display.textContent = "Wind speed: " + json_response.current.wind_kph + "km/h"
     const winddirection_display = widget.querySelector("#windDirection")
     winddirection_display.textContent = "Wind direction: " + json_response.current.wind_dir
+    const atmosphericPressure_display = widget.querySelector("#atmosphericPressure")
+    atmosphericPressure_display.textContent = "Atm pressure: " + Math.round(json_response.current.pressure_in * 25.4 * 100) / 100 + "mm"
 }
 
 async function widgetUpdate(elem) {
@@ -121,7 +123,6 @@ function removeWidget(elem) {
     document.body.removeChild(widget)
 }
 
-
 const widgetHTML = `
     <img src="images/cross.webp" onclick="removeWidget(this)" class="removeButton">
     <div class="info">
@@ -138,6 +139,7 @@ const widgetHTML = `
             <p id="localtime" class="condition"></p>
             <p id="windForce" class="condition"></p>
             <p id="windDirection" class="condition"></p>
+            <p id="atmosphericPressure" class="condition"></p>
         </div>
         <div class="controls">
             <button onclick="widgetUpdate(this)">Get weather info</button>
