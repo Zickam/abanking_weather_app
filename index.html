@@ -13,32 +13,9 @@
     
    
 </head>
-<body>
-    <div class="mainMenu">
-        <div class="innerElem">
-            <div class="searchBox">
-                <input placeholder="latitude" id="inputLatitude"></input>
-            </div>
-            <div class="searchBox">
-                <input placeholder="longitude" id="inputLongitude"></input>
-            </div>
-            <div class="currentConditions">
-                <p id="celsius"></p>
-                <p id="town"></p>
-                <img id="icon" src="">
-                <p id="localtime"></p>
-                <p id="windForce"></p>
-                <p id="windDirection"></p>
-            </div>
-        </div>
-        <div>
-            <button onclick="update()">Get weather info</button>
-
-            <button onclick="updateCoordsFromMap()">Use coordinates from map</button>
-            
-            <div id="map"></div>
-        </div>
-    </div>
+<body id="body">
+    
+    <button onclick="addWidget()">Add widget</button>
 </body>
 <script src="script.js"></script>
 </html>
