@@ -63,7 +63,8 @@ function updateCurrentConditionsDisplay(widget, json_response) {
     const town_display = widget.querySelector("#town")
     town_display.textContent = "Town: " + json_response.location.country + ", " + json_response.location.name
     const icon_display = widget.querySelector("#icon")
-    icon_display.src = json_response.current.condition.icon
+    let icon_url = json_response.current.condition.icon
+    icon_display.src = "https://" + icon_url.substring(2, icon_url.length + 1)
     const localtime_display = widget.querySelector("#localtime")
     localtime_display.textContent = "Local time: " + json_response.location.localtime
     const windforce_display = widget.querySelector("#windForce")
