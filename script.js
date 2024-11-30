@@ -112,14 +112,14 @@ async function update(elem) {
 
 async function addWidget() {
     const body = document.getElementById("body")
+    const addWidgetBtn = document.getElementById("addWidget")
     let child = document.createElement("div");
     child.className = "mainMenu"
     let widget_number = Object.keys(widgets).length + 1;
     child.id = "mainMenu" + (widget_number)
     child.innerHTML = mainMenuHTML.format(widget_number)
 
-    body.appendChild(child)
-
+    body.insertBefore(child, addWidgetBtn)
     map = await initMap(widget_number)
 
     widgets[widget_number] = {"div": child, "map": map}
@@ -128,8 +128,14 @@ async function addWidget() {
     update(child)
 }
 
+function removeWidget(elem) {
+    let widget = getWidgetOfElem(elem)
+    document.body.removeChild(widget)
+}
+
 
 const mainMenuHTML = `
+    <img src="images/cross.webp" onclick="removeWidget(this)" class="removeButton">
     <div class="info">
         <div class="searchBox">
             <input placeholder="latitude" id="inputLatitude"></input>

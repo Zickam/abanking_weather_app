@@ -28,7 +28,7 @@ button:hover {
 
 .searchBox {
     color: white;
-    margin-top: 2%;
+    /* margin-top: 2%; */
     background-color: #283036;
     height: 7%;
     font-size: 25px;
@@ -39,7 +39,8 @@ button:hover {
     padding: 1%;
     justify-content:stretch;
     position: relative;
-    margin: 2%;
+    /* margin: 2%; */
+    margin-bottom: 2%
 }
 
 input {
@@ -63,20 +64,29 @@ input:focus {
     justify-content: space-evenly;
     background-color: gray;
     /* height: 50vh */
-    padding: 1%;
+    padding: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     margin-bottom: 2%;
-    margin-top: 2%
-
+    margin-top: 2%;
+    border-radius: 25px
 }
 
+.removeButton {
+    height: 4vh;
+    /* max-height: 1vh; */
+    filter: brightness(0) saturate(100%) invert(54%) sepia(42%) saturate(3510%) hue-rotate(340deg) brightness(102%) contrast(101%);
+    margin: 0;
+}
 
 .map {
     width: 50vw; 
-    height: 50vh;
+    /* height: 100%; */
 }
 
 .info {
     /* height: 90vh */
+
 }
 
 .currentConditions {
@@ -88,9 +98,9 @@ input:focus {
     padding-top: 0%;
     padding-bottom: 0%;
 
-    /* margin-top: 2%; */
-    margin: 2%;
-    /* margin-bottom: 2% */
+    margin-top: 2%;
+    /* margin: 2%; */
+    margin-bottom: 2%
 }
 
 button {
@@ -120,4 +130,9 @@ button:hover {
     /* margin: 2%;
     display: ;
     justify-content: space-between; */
+}
+
+#addWidget {
+    margin-top: 1%;
+    /* margin: 0 */
 }
